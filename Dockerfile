@@ -20,5 +20,7 @@ FROM nginx:latest
 #copy the build output to replace the default nginx contents 
 COPY --from=build /usr/src/app/dist/test_angular_ci_cd /usr/share/nginx/html
 
+COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+
 #Expose Port 80
 EXPOSE 80
